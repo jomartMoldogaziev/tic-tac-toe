@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="root">
+        
+        <div class="container">
+            <div class="gameResult">
+                <span class="res">Результат игры:</span>
+                <br>
+                <span id="whoWins"></span>
+            </div>
+            <div class="stat">
+                <table>
+                    <th class="statis" colspan="2">Статистика</th>
+                    <tr>
+                        <td>Победа Х</td>
+                        <td id="sX">
+                            <span>0</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Победа О</td>
+                        <td id="sO"><span>0</span></td>
+                    </tr>
+                    <tr>
+                        <td>Ничьи</td>
+                        <td id="sD"><span>0</span></td>
+                    </tr>
+                </table>
+            </div>
+           
+        </div>
+        
+        <div class="cub">
+            <h1 class="zag">Tic-tac-toe</h1>
+            <div class="currenPlayer">
+                <span class="sei">Сейчас ходить: <span id="currentPl">X</span></span>
+            </div>
+            <div id="area"></div>
+        </div>
+        <div class="gameHistory">
+            <div class="his">История игр: 
+                <span id="roundHistory"></span>
+            </div>
+            <br>
+        </div>
+    </div>
+    <audio id="clickSound" src="./schelchok-blizkii-chetkii.mp3"></audio>
+    <audio id="winSound" src="./zvuk-tadam-i-aplodismenty.mp3"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
