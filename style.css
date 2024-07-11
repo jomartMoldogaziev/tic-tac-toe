@@ -157,6 +157,7 @@ table {
         margin-top: -30px;
     }
     .gameHistory{
+        width: 360px;
          margin-left: 20px;
          margin-top: -10px;
     }
@@ -195,7 +196,7 @@ table {
     }
     .his{
         font-size: 35px;
-        margin-left: 50px;
+        margin-left: 70px;
         margin-top:-2px;
     }
     #roundHistory {
