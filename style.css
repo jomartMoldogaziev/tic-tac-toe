@@ -1,128 +1,4 @@
-/* 
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: rgb(2, 77, 2);
-}
 
-.root {
-    display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
-    gap: 20px;
-    width: 80%;
-    max-width: 1200px;
-}
-
-.container, .cub, .stat {
-    border: 1px solid #ccc;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #f9f9f9;
-}
-
-.container {
-    grid-column: 1 / 2;
-    color: rgb(253, 253, 253);
-    background-color: rgb(32, 99, 32);
-    border: none;
-    
-    }
-
-
-.cub {
-    grid-column: 2 / 3;
-    background-color: rgb(57, 143, 57);
-    border: none;
-    
-}
-
-.stat {
-    background-color: rgb(32, 99, 32);
-    border: none;
-   
-    }
-    .gameHistory{
-        grid-column: 3 / 4;
-        color: rgb(253, 253, 253);
-        background-color: rgb(32, 99, 32);
-        border: none;
-        height: 100%;
-    }
-table{
-    font-size: 20px;
-    
-    
-}    
-.statis{
-    color: rgb(247, 75, 75);
-    border-bottom: 2px solid white;
-    
-}
-
-.gameResult, .gameHistory {
-    margin-bottom: 50px;
-    color: rgb(5, 253, 26);
-    
-}
-.res{
-    text-shadow: 0 0px 3px white;
-    font-size: 20px;
-    font-weight: 600;
-    color: red;
-}
-#whoWins{
-    color: white;
-    font-size: 30px;
-}
-#roundHistory{
-    color: white;
-}
-#area {
-    width: 460px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5px;
-    margin-left: 80px;
-    margin-bottom: 30px;
-}
-
-.cell {
-    width: 150px;
-    height: 150px;
-    background-color: #e0e0e0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 80px;
-    cursor: pointer;
-    user-select: none;
-    color: red;
-    border-radius: 10px;
-}
-#currentPl {
-    color: rgb(250, 76, 76);
-    font-weight: bold;
-    font-size: 30px;
-}
-.currenPlayer{
-    font-size: 25px;
-    text-align: center;
-    margin-bottom: 20px;
-    
-}
-#roundHistory{
-    font-size: 20px;
-}
-.his{
-    font-size: 25px;
-    margin-top: 30px;
-    margin-left: 20px;
-    
-} */
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -257,7 +133,7 @@ table {
     margin-left: 20px;
 }
 
-/* Media Queries for Mobile Devices */
+
 @media (max-width: 768px) {
     .root {
         display: flex;
@@ -277,6 +153,9 @@ table {
         margin-top: -60px;
         color: white;
      }
+    .container{
+        margin-top: -30px;
+    }
     .gameHistory{
          margin-left: 20px;
          margin-top: -10px;
@@ -306,6 +185,9 @@ table {
     #whoWins {
         font-size: 25px;
     }
+       .td{
+        margin-left: 20px;
+    }
 
     table {
         font-size: 18px;
@@ -313,7 +195,7 @@ table {
     }
     .his{
         font-size: 35px;
-        margin-left: 35px;
+        margin-left: 50px;
         margin-top:-2px;
     }
     #roundHistory {
@@ -337,61 +219,3 @@ table {
     }
 }
 
-/* @media (max-width: 768px) {
-    .root {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        max-width: 100%;
-        padding: 10px;
-    }
-
-    .container, .cub, .stat {
-        width: 320px;
-        max-width: 100%;
-        margin-bottom: 20px;
-    }
-
-    #area {
-        width: 100%;
-        max-width: 100%;
-        margin-left: 0;
-        margin-bottom: 10px;
-    }
-
-    .cell {
-        width: 100px;
-        height: 100px;
-        font-size: 60px;
-    }
-
-    .currenPlayer {
-        font-size: 20px;
-    }
-
-    #currentPl {
-        font-size: 25px;
-    }
-
-    #whoWins {
-        font-size: 35px;
-        margin-left: 30px;
-    }
-
-    table {
-        font-size: 18px;
-        margin-left: 110px;
-    }
-    .gameHistory{
-        font-size: 35px;
-    }
-    .res{
-        font-size: 25px;
-        margin-left: 30px;
-    }
-    .his{
-        margin-top: -30px;
-        font-size: 35px;
-        margin-left: 30px;
-    }
-} */
