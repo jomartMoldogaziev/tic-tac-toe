@@ -1,7 +1,7 @@
 let area = document.getElementById('area')
 let cells = document.getElementsByClassName('cell')
 let WhoWins = document.getElementById('whoWins')
-currentPlayer = document.getElementById('currentPl')
+let currentPlayer = document.getElementById('currentPl')
 let roundHistoryElement = document.getElementById('roundHistory')
 let clickSound = document.getElementById('clickSound')
 let winSound = document.getElementById('winSound')
@@ -50,15 +50,19 @@ function cellonClick() {
             data.push(parseInt(cells[i].getAttribute('pos')))
         }
     }
-    if (checkWinner(data)) {
+    let winningCells = checkWinner(data)
+    if (winningCells) {
         stat[player] += 1
         WhoWins.innerHTML = 'Победил: ' + [player]
         roundHistory.push(WhoWins.innerHTML)
         document.getElementById("roundHistory").innerHTML += `Победил ${player},<br>`
         updateHistory()
         winSound.play() 
+        highlightWinningCells(winningCells)
         updateStats()
-        refresh()
+        setTimeout(() => {
+            refresh()
+        }, 3000) // 2-second delay before clearing the board
     } else {
         let draw = true
         for (let i in cells) {
@@ -70,12 +74,11 @@ function cellonClick() {
         if (draw) {
             stat.D += 1
             WhoWins.innerHTML = 'Ничья'
-            // roundHistory.push('Ничья')
             roundHistory.push(WhoWins.innerHTML)
             document.getElementById("roundHistory").innerHTML += `Ничья ${player},<br>`
             updateHistory()
             updateStats()
-            refresh()
+            setTimeout(refresh, 3000) // 2-second delay before clearing the board
         }
     }
     player = player === "X" ? "O" : "X"
@@ -93,9 +96,16 @@ function checkWinner(data) {
                 break
             }
         }
-        if (win) return true
+        if (win) return winCombination[i]
     }
     return false
+}
+
+function highlightWinningCells(winningCells) {
+    for (let i in winningCells) {
+        let cell = document.querySelector(`.cell[pos="${winningCells[i]}"]`)
+        cell.classList.add('win')
+    }
 }
 
 function updateStats() {
@@ -111,8 +121,7 @@ function updateHistory() {
 function refresh() {
     for (let i = 0; i < cells.length; i++) {
         cells[i].innerHTML = ""
+        cells[i].classList.remove('win')
     }
- 
 }
-
 
